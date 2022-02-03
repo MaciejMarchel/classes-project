@@ -14,7 +14,9 @@ fun main(args: Array<String>) {
         println("$index: $value")
 
     println("\nUsing Lambdas:\n")
-    employees.forEach  {it -> println(it)}
+    employees
+        .sortedBy { it.lastName}
+        .forEach { println("Employee: ${it.firstName}, ${it.lastName.toUpperCase()}")}
 }
 
 fun employeeInfo(){
